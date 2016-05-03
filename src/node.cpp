@@ -13,6 +13,7 @@ Node* Node::findChild(char base)
     Node* null = new Node();
     null->setIndexMarker(-1);
     
+    // return null if the child is empty
     if(nodeChildren.empty()) { return null; };
     
     // Goes through every child
@@ -23,14 +24,14 @@ Node* Node::findChild(char base)
         // Current node is the child
         Node* tempChild = nodeChildren.at(i);
 
-        // Child matched the content
+        // Return child if child matched the content
         if ( tempChild->getContent() == base )
         {
 
-            // Return child
+            
             return tempChild;
         }
     }
-    
+    // return null if the child cannot be found
     return null;
 }
