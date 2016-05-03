@@ -43,7 +43,7 @@ void Trie::addQuery(std::string query)
         // Check if there's already a child (base) to go to
         Node* child = current->findChild(query[i]);
 
-        // Child was found, go to it
+        // Child was found, go to it and set the current to child
         if ( child->getIndexMarker() != -1 )
         {
             current = child;
