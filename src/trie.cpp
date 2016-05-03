@@ -122,17 +122,17 @@ std::vector<Trie::map> Trie::searchTrieStack(std::string subject, int limit)
     std::vector<Trie::map> returned;
     std::stack<Trie::nodeMismatch> s;
     Trie::nodeMismatch nm;
-	// Convert all the root's children to type nodeMismatch (struct containting the node
-	// and a vector of where mismatches occur) and then add them into the stack
+    // Convert all the root's children to type nodeMismatch (struct containting the node
+    // and a vector of where mismatches occur) and then add them into the stack
     for (Node* child : this->root->children()) {
         nm.node = child;
         nm.mismatches;
         s.push(nm);
     }
     
-	// while there are still branches left to search (ie nodeMismatches in the stack)
+    // while there are still branches left to search (ie nodeMismatches in the stack)
     while (!s.empty()) {
-		// Pop the top element off the stack and get our current variables equal to where we are now
+	// Pop the top element off the stack and get our current variables equal to where we are now
         nm = s.top();
 		s.pop();
 		std::vector<int> currentMismatch = nm.mismatches;
