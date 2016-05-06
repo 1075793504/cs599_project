@@ -60,7 +60,7 @@ void Trie::addQuery(std::string query)
             this->numberOfNodes++;          // keep track of size of the tree i.e how many nodes
 
         }
-
+	// if it reaches the last element of the query, go to the next query
         if ( i == query.length() - 1 ) {
             this->numberOfQuerys++;
             current->setIndexMarker(this->numberOfQuerys);
